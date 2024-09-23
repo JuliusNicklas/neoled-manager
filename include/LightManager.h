@@ -6,22 +6,23 @@
 
 using namespace std;
 
-class LightManager {
+class LightManager
+{
 private:
-// Values
-  Adafruit_NeoPixel strip;
-  
-// Methods
-  uint32_t parseColor(string rgbString);
+    // Values
+    Adafruit_NeoPixel strip;
+
+    // Methods
+    static uint32_t parseColor(string rgbString);
 
 public:
-// Values
-// Methods
-  LightManager(int nbrOfLeds, int brightness);
-  void off();
-  void fillColor(string rgbString);
-  void setColor(int led, string rgbString);
-  void setColor(int leds[], string rgbString);
+    // Values
+    // Methods
+    LightManager(int nbrOfLeds, int brightness);
+    void off();
+    void fillColor(const string rgbString);
+    void setColor(int led, const string rgbString);
+    void setColor(int leds[], int ledsSize, string rgbString);
 };
 
 #endif
